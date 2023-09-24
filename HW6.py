@@ -1,11 +1,13 @@
 def selection_sort(any_list):
     n = len(any_list)
+    sorted_list = list(any_list)
     for i in range(n):
         min_index = i
         for j in range(i + 1, n):
-            if any_list[j] < any_list[min_index]:
+            if sorted_list[j] < sorted_list[min_index]:
                 min_index = j
-        any_list[i], any_list[min_index] = any_list[min_index], any_list[i]
+        sorted_list[i], sorted_list[min_index] = sorted_list[min_index], sorted_list[i]
+    return sorted_list
 
 def binary_search(A, VAL): # A - это список где ищем, VAL - что ищем
     N = len(A)
@@ -35,8 +37,8 @@ def binary_search(A, VAL): # A - это список где ищем, VAL - чт
 unsorted_list = [38, 35, 44, 34, 43, 37, 33, 41, 31, 45, 46, 47, 42, 50, 30]
 print('неотсортированный список:', unsorted_list)
 
-selection_sort(unsorted_list)
-print('отсортированный список:', unsorted_list)
+sorted_list = selection_sort(unsorted_list)
+print('отсортированный список: ', sorted_list)
 
-target_element = 30
-binary_search(unsorted_list, target_element)
+target_element = 33
+binary_search(sorted_list, target_element)
