@@ -28,7 +28,7 @@ def spin_wheel():
 
 def update_balance(balance, bet, win):
     if win:
-        balance += bet * 2
+        balance += bet * 30
     else:
         balance -= bet
     return balance
