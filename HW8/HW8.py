@@ -62,11 +62,11 @@ for city in cities:
 while True:
     selected_city_id = int(input('Введите id города: '))
 
+    if selected_city_id == 0:
+        break
     if selected_city_id not in [city[0] for city in cities]:
         print('Ошибка: Город с указанным ID не найден.')
         continue
-    if selected_city_id == 0:
-        break
 
     cursor.execute('''
         SELECT e.first_name, e.last_name, c.title, co.title, c.area
